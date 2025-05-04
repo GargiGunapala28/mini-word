@@ -1,0 +1,40 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.toolbar {
+    background: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.page-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#editor {
+    background: white;
+    width: 21cm;
+    min-height: 29.7cm;
+    padding: 2cm;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    outline: none;
+    overflow: auto;
+    border: 1px solid #ccc;
+}
+
+.toolbar select,
+.toolbar button,
+.toolbar input[type="color"] {
+    padding: 5px;
+}
