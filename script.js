@@ -27,9 +27,23 @@ function saveDocument() {
     const blob = new Blob([content], { type: "text/html" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = "document.dox";
+    link.download = "document.html";
     link.click();
 }
+
+function saveAsPDF() {
+    const element = document.getElementById("editor");
+    const opt = {
+        margin: 0,
+        filename: 'document.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
+}
+
 
 function changeLineHeight(value) {
     const selection = window.getSelection();
